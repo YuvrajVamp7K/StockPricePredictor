@@ -75,4 +75,4 @@ the stock price will Decrease by [-62.25100365]
 
 ## Conclusion
 
-This project provides a basic but functional model for predicting stock price movements and changes using machine learning. It's a great starting point for building more advanced financial models.
+This project provides a basic but functional model for predicting daily stock price movements and changes using machine learning. It's a great starting point for building more advanced financial models.
