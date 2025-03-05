@@ -1,6 +1,6 @@
 # Stock Price Predictor
 
-This project leverages **Random Forest** models to predict both the direction and magnitude of stock price changes. Using historical data from the Nifty50 index (Indian stock market), the project first creates new features of rolling averages and trends and then builds a:
+This project leverages **Random Forest** models to predict the direction of stock price changes with an 83.3% accuracy. Using historical data from the Nifty50 index (Indian stock market), the project first creates new features of rolling averages and trends and then builds a:
 **Random Forest Classifier** to predict whether the stock price will increase or decrease.
 
 
