@@ -1,17 +1,13 @@
 # Stock Price Predictor
 
-This project leverages **Random Forest** models to predict both the direction and magnitude of stock price changes. Using historical data from the Nifty50 index (Indian stock market), the project builds two machine learning models:
+This project leverages **Random Forest** models to predict both the direction and magnitude of stock price changes. Using historical data from the Nifty50 index (Indian stock market), the project first creates new features of rolling averages and trends and then builds a:
+**Random Forest Classifier** to predict whether the stock price will increase or decrease.
 
-1. A **Random Forest Classifier** to predict whether the stock price will increase or decrease.
-2. A **Random Forest Regressor** to predict by how much the price will increase or decrease.
 
 ## Project Structure
 
 - **`stock_predictor.ipynb`**: 
-  This notebook contains the core model training logic. It pulls historical stock data, prepares the dataset, and builds both classifier and regressor models using **Random Forest**. After training, the models are saved for future predictions.
-
-- **`trying_the_model.ipynb`**: 
-  This notebook loads the saved models and applies them to new stock data to predict both the direction and the magnitude of price changes. 
+  This notebook contains the core model training logic. It pulls historical stock data, prepares the dataset, and builds the model using **Random Forest**. After training, the models are saved for future predictions.
 
 ## Installation and Setup
 
@@ -34,18 +30,14 @@ pip install yfinance pandas scikit-learn joblib
    `stock_predictor.ipynb` --> This notebook pulls historical data from the Nifty50, trains a Random Forest Classifier and Regressor, and saves the models as `stockpred.pkl` and `price_change_predictor.pkl`.
 
 2. **Use the Model**:
-   Open and run `trying_the_model.ipynb`. This notebook loads the saved models and tests them on new stock data. Modify the `new_data` DataFrame in this notebook to test predictions on your own data.
+   Scroll down ,This notebook loads the saved models and tests them on new stock data. Modify the `new_data` DataFrame in this notebook to test predictions on your own data.
 
 ## How the Models Work
 
-- **Classifier**: 
-  Predicts whether the stock price will go up or down based on features such as `Close`, `Volume`, `Open`, `High`, and `Low`.
+The **Classifier**: Predicts whether the stock price will go up or down based on features such as `Close`, `Volume`, `Open`, `High`, and `Low`.
   
-- **Regressor**: 
-  Predicts the magnitude of the price change (increase or decrease) based on the same features.
-
 ### Example Output:
-From `trying_the_model.ipynb`:
+From `stock_predictor.ipynb`:
 ```python
 new_data = pd.DataFrame({
     'Close': [25127.95],
@@ -58,12 +50,10 @@ new_data = pd.DataFrame({
 #### output
 ```output
 Predictions for new data: [0]
-the stock price will Decrease by [-62.25100365]
 ```
 ## Key Features
 
 - **Random Forest Classifier**: Predicts price movement direction (Increase/Decrease).
-- **Random Forest Regressor**: Predicts how much the price will change.
 - Uses **Nifty50** stock market data for model training.
 - Models are saved and reused in future predictions.
 
@@ -75,4 +65,4 @@ the stock price will Decrease by [-62.25100365]
 
 ## Conclusion
 
-This project provides a basic but functional model for predicting daily stock price movements and changes using machine learning. It's a great starting point for building more advanced financial models.
+This project provides a basic but functional model for predicting daily stock price movements and changes using machine learning. It was build as my capstone project for CBSE 2025 AI practical.
